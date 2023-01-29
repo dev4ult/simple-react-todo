@@ -101,8 +101,8 @@ function App() {
       list = list.map((target) => {
         const todo = target.status == 'completed' ? <s>{target.todo}</s> : target.todo;
         return (
-          <li className={`${target.status == 'completed' ? 'text-white/75' : 'text-slate-700'} flex justify-between gap-5 items-center`}>
-            <span>{todo}</span>
+          <li className={`${target.status == 'completed' ? 'text-white/75 border-white/75' : 'text-slate-700 border-slate-700/50'} flex justify-between gap-5 items-center border-b-2 mt-4 py-1`}>
+            <span className="max-w-sm">{todo}</span>
             <div className="flex gap-2">
               <button type="button" onClick={checkTodo.bind(null, target.todo)}>
                 {target.status == 'completed' ? <Checks /> : <Check />}
@@ -121,7 +121,7 @@ function App() {
 
   function InputTodo() {
     return (
-      <div className="text-right transition-transform hover:-translate-y-2 duration-500 text-slate-700">
+      <div className="text-right transition-transform hover:-translate-y-2 duration-500 text-slate-700 ">
         <button type="button" className="text-white w-fit" onClick={setShowInput.bind(null, false)}>
           <CircleX />
         </button>
@@ -131,7 +131,7 @@ function App() {
               <div className={'flex items-center gap-3'}>
                 <input
                   type="text"
-                  className="bg-transparent focus:ring-0 border-0 focus:border-white/50 border-b-2 border-white/50"
+                  className="bg-transparent focus:ring-0 border-0 focus:border-white/50 border-b-2 border-white/50 w-full"
                   onChange={(event) => {
                     setInputValue(event.target.value);
                   }}
@@ -150,7 +150,7 @@ function App() {
   }
 
   return (
-    <div className="font-poppins  bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex flex-col gap-5 justify-center items-center">
+    <div className="font-poppins  bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex flex-col gap-5 justify-center items-center px-3">
       {showInput || ShowInputButton()}
       {!showInput || InputTodo()}
       <Card className={'transition-transform hover:-translate-y-2 duration-500'}>
