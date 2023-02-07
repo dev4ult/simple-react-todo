@@ -1,3 +1,3 @@
 # simple-react-todo
 
-take a deployed one <a href="https://dev4ult.github.io/simple-react-todo/">here</a>
+this app has been deployed on <a href="https://dev4ult.github.io/simple-react-todo/">here</a>
